@@ -1,0 +1,8 @@
+[
+{
+  "directory": "Z:/Games101/build",
+  "command": "E:\\mingw64\\bin\\g++.exe  @CMakeFiles/Transformation.dir/includes_CXX.rsp -g -o CMakeFiles\\Transformation.dir\\main.cpp.obj -c Z:\\Games101\\pa0\\pa0\\main.cpp",
+  "file": "Z:/Games101/pa0/pa0/main.cpp",
+  "output": "CMakeFiles/Transformation.dir/main.cpp.obj"
+}
+]

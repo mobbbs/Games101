@@ -1,0 +1,211 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: E:/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        Z:/Games101/Assignment1/build/CMakeFiles/3.30.3/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: E:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        Z:/Games101/Assignment1/build/CMakeFiles/3.30.3/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-txna06"
+      binary: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-txna06"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-txna06'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 E:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_4151a/fast
+        E:/mingw64/bin/mingw32-make.exe  -f CMakeFiles/cmTC_4151a.dir/build.make CMakeFiles/cmTC_4151a.dir/build
+        mingw32-make.exe[1]: Entering directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-txna06'
+        Building C object CMakeFiles/cmTC_4151a.dir/CMakeCCompilerABI.c.obj
+        E:/mingw64/bin/gcc.exe   -v -o CMakeFiles/cmTC_4151a.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=E:\\mingw64\\bin\\gcc.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libssp --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev1, Built by MinGW-Builds project' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/include -I/c/buildroot/prerequisites/x86_64-zlib-static/include -I/c/buildroot/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/include -I/c/buildroot/prerequisites/x86_64-zlib-static/include -I/c/buildroot/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/include -I/c/buildroot/prerequisites/x86_64-zlib-static/include -I/c/buildroot/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/lib -L/c/buildroot/prerequisites/x86_64-zlib-static/lib -L/c/buildroot/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc'
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 13.1.0 (x86_64-posix-seh-rev1, Built by MinGW-Builds project) 
+        COMPILER_PATH=E:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;E:/mingw64/bin/../libexec/gcc/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;E:/mingw64/bin/../lib/gcc/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4151a.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_4151a.dir/CMakeCCompilerABI.c.'
+        gcc.exe: warning: C:/Program: linker input file unused because linking not done
+        gcc.exe: error: C:/Program: linker input file not found: No such file or directory
+        gcc.exe: warning: Files/CMake/share/cmake-3.30/Modules/CMakeCCompilerABI.c\\: linker input file unused because linking not done
+        gcc.exe: error: Files/CMake/share/cmake-3.30/Modules/CMakeCCompilerABI.c\\: linker input file not found: No such file or directory
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_4151a.dir/build.make:78: CMakeFiles/cmTC_4151a.dir/CMakeCCompilerABI.c.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-txna06'
+        mingw32-make.exe: *** [Makefile:127: cmTC_4151a/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working C compiler: E:/mingw64/bin/gcc.exe"
+    directories:
+      source: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-jqauuv"
+      binary: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-jqauuv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-jqauuv'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 E:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_3e099/fast
+        E:/mingw64/bin/mingw32-make.exe  -f CMakeFiles/cmTC_3e099.dir/build.make CMakeFiles/cmTC_3e099.dir/build
+        mingw32-make.exe[1]: Entering directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-jqauuv'
+        Building C object CMakeFiles/cmTC_3e099.dir/testCCompiler.c.obj
+        E:/mingw64/bin/gcc.exe    -o CMakeFiles/cmTC_3e099.dir/testCCompiler.c.obj -c Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-jqauuv/testCCompiler.c
+        Linking C executable cmTC_3e099.exe
+        "C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/cmTC_3e099.dir/objects.a
+        E:/mingw64/bin/ar.exe qc CMakeFiles/cmTC_3e099.dir/objects.a @CMakeFiles/cmTC_3e099.dir/objects1.rsp
+        E:/mingw64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_3e099.dir/objects.a -Wl,--no-whole-archive -o cmTC_3e099.exe -Wl,--out-implib,libcmTC_3e099.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_3e099.dir/linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-jqauuv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-mq5z75"
+      binary: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-mq5z75"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-mq5z75'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 E:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_74673/fast
+        E:/mingw64/bin/mingw32-make.exe  -f CMakeFiles/cmTC_74673.dir/build.make CMakeFiles/cmTC_74673.dir/build
+        mingw32-make.exe[1]: Entering directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-mq5z75'
+        Building CXX object CMakeFiles/cmTC_74673.dir/CMakeCXXCompilerABI.cpp.obj
+        E:/mingw64/bin/g++.exe   -v -o CMakeFiles/cmTC_74673.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=E:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libssp --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/buildroot/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev1, Built by MinGW-Builds project' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/include -I/c/buildroot/prerequisites/x86_64-zlib-static/include -I/c/buildroot/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/include -I/c/buildroot/prerequisites/x86_64-zlib-static/include -I/c/buildroot/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/include -I/c/buildroot/prerequisites/x86_64-zlib-static/include -I/c/buildroot/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/opt/lib -L/c/buildroot/prerequisites/x86_64-zlib-static/lib -L/c/buildroot/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/c/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc'
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 13.1.0 (x86_64-posix-seh-rev1, Built by MinGW-Builds project) 
+        COMPILER_PATH=E:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;E:/mingw64/bin/../libexec/gcc/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;E:/mingw64/bin/../lib/gcc/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;E:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_74673.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_74673.dir/CMakeCXXCompilerABI.cpp.'
+        g++.exe: warning: C:/Program: linker input file unused because linking not done
+        g++.exe: error: C:/Program: linker input file not found: No such file or directory
+        g++.exe: warning: Files/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp\\: linker input file unused because linking not done
+        g++.exe: error: Files/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp\\: linker input file not found: No such file or directory
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_74673.dir/build.make:78: CMakeFiles/cmTC_74673.dir/CMakeCXXCompilerABI.cpp.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-mq5z75'
+        mingw32-make.exe: *** [Makefile:127: cmTC_74673/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working CXX compiler: E:/mingw64/bin/g++.exe"
+    directories:
+      source: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-p53n46"
+      binary: "Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-p53n46"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-p53n46'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 E:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_be0b4/fast
+        E:/mingw64/bin/mingw32-make.exe  -f CMakeFiles/cmTC_be0b4.dir/build.make CMakeFiles/cmTC_be0b4.dir/build
+        mingw32-make.exe[1]: Entering directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-p53n46'
+        Building CXX object CMakeFiles/cmTC_be0b4.dir/testCXXCompiler.cxx.obj
+        E:/mingw64/bin/g++.exe    -o CMakeFiles/cmTC_be0b4.dir/testCXXCompiler.cxx.obj -c Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-p53n46/testCXXCompiler.cxx
+        Linking CXX executable cmTC_be0b4.exe
+        "C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/cmTC_be0b4.dir/objects.a
+        E:/mingw64/bin/ar.exe qc CMakeFiles/cmTC_be0b4.dir/objects.a @CMakeFiles/cmTC_be0b4.dir/objects1.rsp
+        E:/mingw64/bin/g++.exe -Wl,--whole-archive CMakeFiles/cmTC_be0b4.dir/objects.a -Wl,--no-whole-archive -o cmTC_be0b4.exe -Wl,--out-implib,libcmTC_be0b4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_be0b4.dir/linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'Z:/Games101/Assignment1/build/CMakeFiles/CMakeScratch/TryCompile-p53n46'
+        
+      exitCode: 0
+...
