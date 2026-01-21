@@ -9,8 +9,7 @@
 #include "rasterizer.hpp"
 
 // 统一的日志控制宏，使用 rasterizer 的日志开关
-#define DEBUG_LOG \
-    if (rst::rasterizer::enable_debug_log) std::cerr
+#define DEBUG_LOG if (rst::rasterizer::enable_debug_log) std::cerr
 
 Eigen::Matrix4f get_view_matrix(Eigen::Vector3f eye_pos) {
     Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
@@ -362,15 +361,15 @@ int main(int argc, const char** argv) {
         r.set_view(get_view_matrix(eye_pos));
         r.set_projection(get_projection_matrix(45.0, 1, 0.1, 50));
 
-        std::cerr << "Start Rraw" << std::endl;
+        std::cout << "Start Rraw" << std::endl;
 
         r.draw(TriangleList);
 
-        std::cerr << "End Rraw" << std::endl;
+        std::cout << "End Rraw" << std::endl;
         cv::Mat image(700, 700, CV_32FC3, r.frame_buffer().data());
         image.convertTo(image, CV_8UC3, 1.0f);
         cv::cvtColor(image, image, cv::COLOR_RGB2BGR);
-
+        std::cout << "Write to " << filename << std::endl;
         cv::imwrite(filename, image);
 
         return 0;
