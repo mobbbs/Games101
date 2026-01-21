@@ -1,5 +1,6 @@
 CMakeFiles/Rasterizer.dir/rasterizer.cpp.obj: \
  Z:\Games101\Assignment3\Code\rasterizer.cpp \
+ Z:\Games101\Assignment3\Code\rasterizer.hpp \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -54,7 +55,6 @@ CMakeFiles/Rasterizer.dir/rasterizer.cpp.obj: \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- Z:\Games101\Assignment3\Code\rasterizer.hpp \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/Eigen \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/Dense \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/Core \
@@ -460,9 +460,9 @@ CMakeFiles/Rasterizer.dir/rasterizer.cpp.obj: \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocated_ptr.h \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
  E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional \
- Z:\Games101\Assignment3\Code\global.hpp \
  Z:\Games101\Assignment3\Code\Shader.hpp \
  Z:\Games101\Assignment3\Code\Texture.hpp \
+ Z:\Games101\Assignment3\Code\global.hpp \
  Z:/Game101_pre/opencv/sources/build/install/include/opencv2/opencv.hpp \
  Z:/Game101_pre/opencv/sources/build/install/include/opencv2/opencv_modules.hpp \
  Z:/Game101_pre/opencv/sources/build/install/include/opencv2/core.hpp \

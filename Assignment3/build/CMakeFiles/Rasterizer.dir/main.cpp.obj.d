@@ -366,8 +366,12 @@ CMakeFiles/Rasterizer.dir/main.cpp.obj: \
  Z:/Game101_pre/opencv/sources/build/install/include/opencv2/video.hpp \
  Z:/Game101_pre/opencv/sources/build/install/include/opencv2/video/tracking.hpp \
  Z:/Game101_pre/opencv/sources/build/install/include/opencv2/video/background_segm.hpp \
- Z:\Games101\Assignment3\Code\global.hpp \
- Z:\Games101\Assignment3\Code\rasterizer.hpp \
+ Z:\Games101\Assignment3\Code\OBJ_Loader.h \
+ E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
+ E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
+ Z:\Games101\Assignment3\Code\Shader.hpp \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/Eigen \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/Dense \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/Core \
@@ -622,12 +626,8 @@ CMakeFiles/Rasterizer.dir/main.cpp.obj: \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
  C:/PROGRA~2/Eigen3/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
- E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional \
- Z:\Games101\Assignment3\Code\Shader.hpp \
  Z:\Games101\Assignment3\Code\Texture.hpp \
+ Z:\Games101\Assignment3\Code\global.hpp \
  Z:\Games101\Assignment3\Code\Triangle.hpp \
- Z:\Games101\Assignment3\Code\OBJ_Loader.h \
- E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
- E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
- E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
- E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc
+ Z:\Games101\Assignment3\Code\rasterizer.hpp \
+ E:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional

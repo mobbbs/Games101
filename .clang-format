@@ -1,0 +1,9 @@
+# Clang-Format 配置文件
+# 设置大括号风格为 Allman（大括号独立成行）
+
+BasedOnStyle: Google
+BreakBeforeBraces: Attach
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 120

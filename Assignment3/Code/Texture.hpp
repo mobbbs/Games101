@@ -10,9 +10,10 @@
 class Texture{
 private:
     cv::Mat image_data;
+    std::string name;
 
 public:
-    Texture(const std::string& name)
+    Texture(const std::string& name) : name(name)
     {
         image_data = cv::imread(name);
         cv::cvtColor(image_data, image_data, cv::COLOR_RGB2BGR);
@@ -29,6 +30,8 @@ public:
         auto color = image_data.at<cv::Vec3b>(v_img, u_img);
         return Eigen::Vector3f(color[0], color[1], color[2]);
     }
+
+    std::string GetName() const { return name; }
 
 };
 #endif //RASTERIZER_TEXTURE_H

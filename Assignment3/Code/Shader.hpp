@@ -5,19 +5,15 @@
 #ifndef RASTERIZER_SHADER_H
 #define RASTERIZER_SHADER_H
 #include <eigen3/Eigen/Eigen>
+
 #include "Texture.hpp"
 
+struct fragment_shader_payload {
+    fragment_shader_payload() { texture = nullptr; }
 
-struct fragment_shader_payload
-{
-    fragment_shader_payload()
-    {
-        texture = nullptr;
-    }
-
-    fragment_shader_payload(const Eigen::Vector3f& col, const Eigen::Vector3f& nor,const Eigen::Vector2f& tc, Texture* tex) :
-         color(col), normal(nor), tex_coords(tc), texture(tex) {}
-
+    fragment_shader_payload(const Eigen::Vector3f& col, const Eigen::Vector3f& nor, const Eigen::Vector2f& tc,
+                            Texture* tex)
+        : color(col), normal(nor), tex_coords(tc), texture(tex) {}
 
     Eigen::Vector3f view_pos;  // position in view space also in world space
     Eigen::Vector3f color;
@@ -26,9 +22,8 @@ struct fragment_shader_payload
     Texture* texture;
 };
 
-struct vertex_shader_payload
-{
+struct vertex_shader_payload {
     Eigen::Vector3f position;
 };
 
-#endif //RASTERIZER_SHADER_H
+#endif  // RASTERIZER_SHADER_H
