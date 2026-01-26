@@ -4,48 +4,67 @@
 
 std::vector<cv::Point2f> control_points;
 
-void mouse_handler(int event, int x, int y, int flags, void *userdata) 
-{
-    if (event == cv::EVENT_LBUTTONDOWN && control_points.size() < 4) 
-    {
-        std::cout << "Left button of the mouse is clicked - position (" << x << ", "
-        << y << ")" << '\n';
+void mouse_handler(int event, int x, int y, int flags, void* userdata) {
+    if (event == cv::EVENT_LBUTTONDOWN && control_points.size() < 4) {
+        std::cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << '\n';
         control_points.emplace_back(x, y);
-    }     
+    }
 }
 
-void naive_bezier(const std::vector<cv::Point2f> &points, cv::Mat &window) 
-{
-    auto &p_0 = points[0];
-    auto &p_1 = points[1];
-    auto &p_2 = points[2];
-    auto &p_3 = points[3];
+void naive_bezier(const std::vector<cv::Point2f>& points, cv::Mat& window) {
+    auto& p_0 = points[0];
+    auto& p_1 = points[1];
+    auto& p_2 = points[2];
+    auto& p_3 = points[3];
 
-    for (double t = 0.0; t <= 1.0; t += 0.001) 
-    {
-        auto point = std::pow(1 - t, 3) * p_0 + 3 * t * std::pow(1 - t, 2) * p_1 +
-                 3 * std::pow(t, 2) * (1 - t) * p_2 + std::pow(t, 3) * p_3;
+    for (double t = 0.0; t <= 1.0; t += 0.001) {
+        // auto point = std::pow(1 - t, 3) * p_0 + 3 * t * std::pow(1 - t, 2) * p_1 + 3 * std::pow(t, 2) * (1 - t) * p_2 + std::pow(t, 3) * p_3;
+        
+        auto p_01 = p_0 + t * (p_1 - p_0);
+        auto p_12 = p_1 + t * (p_2 - p_1);
+        auto p_23 = p_2 + t * (p_3 - p_2);
+        
+        auto p_012 = p_01 + t * (p_12 - p_01);
+        auto p_123 = p_12 + t * (p_23 - p_12);
+
+        auto point = p_012 + t * (p_123 - p_012);
+
 
         window.at<cv::Vec3b>(point.y, point.x)[2] = 255;
     }
 }
 
-cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, float t) 
-{
+cv::Point2f recursive_bezier(const std::vector<cv::Point2f>& control_points, float t) {
     // TODO: Implement de Casteljau's algorithm
-    return cv::Point2f();
+    
+    std::vector<cv::Point2f> point;
+    auto dfs = [&](auto &&dfs, auto points) -> auto {
+        if (points.size() == 1){
+            return points[0];
+        }
+        point.clear();
+        for (int i = 0; i < points.size() - 1; i++){
+            auto p0 = points[i];
+            auto p1 = points[i + 1];
+            auto p01 = p0 + t * (p1 - p0);
+            point.emplace_back(p01);
+        }
+        return dfs(dfs, point); 
+    };
 
+    return dfs(dfs, control_points);
 }
 
-void bezier(const std::vector<cv::Point2f> &control_points, cv::Mat &window) 
-{
-    // TODO: Iterate through all t = 0 to t = 1 with small steps, and call de Casteljau's 
+void bezier(const std::vector<cv::Point2f>& control_points, cv::Mat& window) {
+    // TODO: Iterate through all t = 0 to t = 1 with small steps, and call de Casteljau's
     // recursive Bezier algorithm.
-
+    for (double t = 0.0; t <= 1.0; t += 0.001) {
+        auto point = recursive_bezier(control_points, t);
+        window.at<cv::Vec3b>(point.y, point.x)[2] = 255;
+    }
 }
 
-int main() 
-{
+int main() {
     cv::Mat window = cv::Mat(700, 700, CV_8UC3, cv::Scalar(0));
     cv::cvtColor(window, window, cv::COLOR_BGR2RGB);
     cv::namedWindow("Bezier Curve", cv::WINDOW_AUTOSIZE);
@@ -53,17 +72,14 @@ int main()
     cv::setMouseCallback("Bezier Curve", mouse_handler, nullptr);
 
     int key = -1;
-    while (key != 27) 
-    {
-        for (auto &point : control_points) 
-        {
+    while (key != 27) {
+        for (auto& point : control_points) {
             cv::circle(window, point, 3, {255, 255, 255}, 3);
         }
 
-        if (control_points.size() == 4) 
-        {
-            naive_bezier(control_points, window);
-            //   bezier(control_points, window);
+        if (control_points.size() == 4) {
+            // naive_bezier(control_points, window);
+            bezier(control_points, window);
 
             cv::imshow("Bezier Curve", window);
             cv::imwrite("my_bezier_curve.png", window);
@@ -76,5 +92,5 @@ int main()
         key = cv::waitKey(20);
     }
 
-return 0;
+    return 0;
 }

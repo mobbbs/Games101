@@ -1,4 +1,4 @@
 {
     "cmake.sourceDirectory": "Z:/mobbb/Games101/Assignment4/code",
-    "C_Cpp.default.compilerPath": "E:/mingw64/bin/g++.exe"
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }
