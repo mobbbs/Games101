@@ -80,9 +80,7 @@ float fresnel(const Vector3f &I, const Vector3f &N, const float &ior)
 // \param[out] *hitObject stores the pointer to the intersected object (used to retrieve material information, etc.)
 // \param isShadowRay is it a shadow ray. We can return from the function sooner as soon as we have found a hit.
 // [/comment]
-std::optional<hit_payload> trace(
-        const Vector3f &orig, const Vector3f &dir,
-        const std::vector<std::unique_ptr<Object> > &objects)
+std::optional<hit_payload> trace(const Vector3f &orig, const Vector3f &dir, const std::vector<std::unique_ptr<Object>> &objects)
 {
     float tNear = kInfinity;
     std::optional<hit_payload> payload;
@@ -121,12 +119,10 @@ std::optional<hit_payload> trace(
 // If the surface is diffuse/glossy we use the Phong illumation model to compute the color
 // at the intersection point.
 // [/comment]
-Vector3f castRay(
-        const Vector3f &orig, const Vector3f &dir, const Scene& scene,
-        int depth)
+Vector3f castRay(const Vector3f &orig, const Vector3f &dir, const Scene& scene, int depth)
 {
     if (depth > scene.maxDepth) {
-        return Vector3f(0.0,0.0,0.0);
+        return Vector3f(0.0, 0.0, 0.0);
     }
 
     Vector3f hitColor = scene.backgroundColor;
@@ -223,18 +219,21 @@ void Renderer::Render(const Scene& scene)
         for (int i = 0; i < scene.width; ++i)
         {
             // generate primary ray direction
-            float x;
-            float y;
+            float x = (2 * (i + 0.5) / (float)scene.width - 1) * imageAspectRatio * scale;
+            float y = (1 - 2 * (j + 0.5) / (float)scene.height) * scale;
             // TODO: Find the x and y positions of the current pixel to get the direction
             // vector that passes through it.
             // Also, don't forget to multiply both of them with the variable *scale*, and
             // x (horizontal) variable with the *imageAspectRatio*            
-
+            
             Vector3f dir = Vector3f(x, y, -1); // Don't forget to normalize this direction!
+            dir = normalize(dir);
             framebuffer[m++] = castRay(eye_pos, dir, scene, 0);
         }
         UpdateProgress(j / (float)scene.height);
     }
+    UpdateProgress(1.f);
+    std::cout << std::endl;
 
     // save framebuffer to file
     FILE* fp = fopen("binary.ppm", "wb");
