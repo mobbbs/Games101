@@ -9,10 +9,7 @@
 #include <cassert>
 #include <array>
 
-bool rayTriangleIntersect(const Vector3f& v0, const Vector3f& v1,
-                          const Vector3f& v2, const Vector3f& orig,
-                          const Vector3f& dir, float& tnear, float& u, float& v)
-{
+bool rayTriangleIntersect(const Vector3f& v0, const Vector3f& v1,const Vector3f& v2, const Vector3f& orig, const Vector3f& dir, float& tnear, float& u, float& v){
     Vector3f edge1 = v1 - v0;
     Vector3f edge2 = v2 - v0;
     Vector3f pvec = crossProduct(dir, edge2);
@@ -208,34 +205,36 @@ inline bool Triangle::intersect(const Ray& ray, float& tnear,
 
 inline Bounds3 Triangle::getBounds() { return Union(Bounds3(v0, v1), v2); }
 
-inline Intersection Triangle::getIntersection(Ray ray)
-{
+inline Intersection Triangle::getIntersection(Ray ray){
     Intersection inter;
 
     if (dotProduct(ray.direction, normal) > 0)
         return inter;
-    double u, v, t_tmp = 0;
-    Vector3f pvec = crossProduct(ray.direction, e2);
-    double det = dotProduct(e1, pvec);
-    if (fabs(det) < EPSILON)
+    double u, v = 0;
+
+    Vector3f e1 = v1 - v0;
+    Vector3f e2 = v2 - v0;
+    Vector3f s = ray.origin - v0;
+    Vector3f s1 = crossProduct(ray.direction, e2);
+    Vector3f s2 = crossProduct(s, e1);
+    float s1e1 = dotProduct(s1, e1);
+    if (fabs(s1e1) < 0.00001) {
         return inter;
-
-    double det_inv = 1. / det;
-    Vector3f tvec = ray.origin - v0;
-    u = dotProduct(tvec, pvec) * det_inv;
-    if (u < 0 || u > 1)
+    }
+    float invS1e1 = 1 / s1e1;
+    float t = dotProduct(s2, e2) * invS1e1;
+    float b1 = dotProduct(s1, s) * invS1e1;
+    float b2 = dotProduct(s2, ray.direction) * invS1e1;
+    if (t < 0 || b1 < 0 || b2 < 0 || b1 + b2 > 1){
         return inter;
-    Vector3f qvec = crossProduct(tvec, e1);
-    v = dotProduct(ray.direction, qvec) * det_inv;
-    if (v < 0 || u + v > 1)
-        return inter;
-    t_tmp = dotProduct(e2, qvec) * det_inv;
-
-    // TODO find ray triangle intersection
-
-
-
-
+    }
+    inter.distance = std::sqrt(dotProduct(lerp(ray.origin, ray.direction, t), lerp(ray.origin, ray.direction, t)));
+    u = b1;
+    v = b2;
+    inter.coords = (1 - u - v) * v0 + u * v1 + v * v2;
+    inter.normal = normal;
+    inter.happened = true;
+    
     return inter;
 }
 

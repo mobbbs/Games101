@@ -15,10 +15,7 @@ Intersection Scene::intersect(const Ray &ray) const
     return this->bvh->Intersect(ray);
 }
 
-bool Scene::trace(
-        const Ray &ray,
-        const std::vector<Object*> &objects,
-        float &tNear, uint32_t &index, Object **hitObject)
+bool Scene::trace(const Ray &ray,const std::vector<Object*> &objects, float &tNear, uint32_t &index, Object **hitObject)
 {
     *hitObject = nullptr;
     for (uint32_t k = 0; k < objects.size(); ++k) {

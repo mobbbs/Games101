@@ -20,9 +20,7 @@ BVHAccel::BVHAccel(std::vector<Object*> p, int maxPrimsInNode,
     int mins = ((int)diff / 60) - (hrs * 60);
     int secs = (int)diff - (hrs * 3600) - (mins * 60);
 
-    printf(
-        "\rBVH Generation complete: \nTime Taken: %i hrs, %i mins, %i secs\n\n",
-        hrs, mins, secs);
+    printf("\rBVH Generation complete: \nTime Taken: %i hrs, %i mins, %i secs\n\n",hrs, mins, secs);
 }
 
 BVHBuildNode* BVHAccel::recursiveBuild(std::vector<Object*> objects)
@@ -105,5 +103,23 @@ Intersection BVHAccel::Intersect(const Ray& ray) const
 Intersection BVHAccel::getIntersection(BVHBuildNode* node, const Ray& ray) const
 {
     // TODO Traverse the BVH to find intersection
+    
+    Intersection intersec;
 
+    if (node->bounds.IntersectP(ray, ray.direction_inv, {int(ray.direction_inv.x < 0), int(ray.direction_inv.y < 0), int(ray.direction_inv.z < 0)})) {
+        if (node->left == nullptr && node->right == nullptr) {
+            intersec = node->object->getIntersection(ray);
+        }
+        else {
+            Intersection leftIntersec = getIntersection(node->left, ray);
+            Intersection rightIntersec = getIntersection(node->right, ray);
+            if (leftIntersec.distance < rightIntersec.distance) {
+                intersec = leftIntersec;
+            }
+            else {
+                intersec = rightIntersec;
+            }
+        }
+    }
+    return intersec;
 }
