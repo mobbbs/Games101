@@ -133,9 +133,7 @@ public:
             const Vector3f& v1 = vertices[vertexIndex[k * 3 + 1]];
             const Vector3f& v2 = vertices[vertexIndex[k * 3 + 2]];
             float t, u, v;
-            if (rayTriangleIntersect(v0, v1, v2, ray.origin, ray.direction, t,
-                                     u, v) &&
-                t < tnear) {
+            if (rayTriangleIntersect(v0, v1, v2, ray.origin, ray.direction, t, u, v) && t < tnear) {
                 tnear = t;
                 index = k;
                 intersect |= true;
@@ -172,15 +170,8 @@ public:
                     Vector3f(0.937, 0.937, 0.231), pattern);
     }
 
-    Intersection getIntersection(Ray ray)
-    {
-        Intersection intersec;
-
-        if (bvh) {
-            intersec = bvh->Intersect(ray);
-        }
-
-        return intersec;
+    Intersection getIntersection(Ray ray){
+        return bvh->Intersect(ray);
     }
 
     Bounds3 bounding_box;
@@ -228,11 +219,13 @@ inline Intersection Triangle::getIntersection(Ray ray){
     if (t < 0 || b1 < 0 || b2 < 0 || b1 + b2 > 1){
         return inter;
     }
-    inter.distance = std::sqrt(dotProduct(lerp(ray.origin, ray.direction, t), lerp(ray.origin, ray.direction, t)));
+    inter.distance = t;
     u = b1;
     v = b2;
     inter.coords = (1 - u - v) * v0 + u * v1 + v * v2;
     inter.normal = normal;
+    inter.m = m;
+    inter.obj = this;
     inter.happened = true;
     
     return inter;

@@ -45,7 +45,7 @@ class Bounds3
         return 2 * (d.x * d.y + d.x * d.z + d.y * d.z);
     }
 
-    Vector3f Centroid() { return 0.5 * pMin + 0.5 * pMax; }
+    Vector3f Centroid() const { return 0.5 * pMin + 0.5 * pMax; }
     Bounds3 Intersect(const Bounds3& b)
     {
         return Bounds3(Vector3f(fmax(pMin.x, b.pMin.x), fmax(pMin.y, b.pMin.y),

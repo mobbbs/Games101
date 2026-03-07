@@ -25,7 +25,7 @@ class BVHAccel {
 
 public:
     // BVHAccel Public Types
-    enum class SplitMethod { NAIVE, SAH };
+    enum class SplitMethod { NAIVE, SAH};
 
     // BVHAccel Public Methods
     BVHAccel(std::vector<Object*> p, int maxPrimsInNode = 1, SplitMethod splitMethod = SplitMethod::NAIVE);
@@ -38,7 +38,9 @@ public:
     BVHBuildNode* root;
 
     // BVHAccel Private Methods
-    BVHBuildNode* recursiveBuild(std::vector<Object*>objects);
+    BVHBuildNode* recursiveBuildNaive(std::vector<Object*>objects);
+    BVHBuildNode* recursiveBuildSAH(std::vector<Object*> objects);
+    BVHBuildNode* BuildTree(std::vector<Object*> objects, SplitMethod method);
 
     // BVHAccel Private Data
     const int maxPrimsInNode;
